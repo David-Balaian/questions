@@ -1,0 +1,15 @@
+function MakeUser(name,balance = 0){
+	this.name = name;
+	getbalan= function(){
+		let balanceValue = +balance
+		return function addbal(add = 0){
+			if (add =='get'){
+                return `balance is: ${balanceValue}$`
+            }
+            balanceValue += add;
+            return `balance is: ${balanceValue}$` 
+		}
+    }
+	this.addbalance = getbalan(0);
+	this.getbalance = () => {return this.addbalance('get')}
+}
